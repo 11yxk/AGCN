@@ -12,11 +12,17 @@ Please follow [TransUnet](https://github.com/Beckschen/TransUNet).
 
 
 
-### Training
-please change root_path and run:
+### Training and testing
+please change 'root_path' and run:
 
 ```
 python train.py
+```
+
+please change 'volume_path' and run:
+
+```
+python test.py
 ```
 
 
