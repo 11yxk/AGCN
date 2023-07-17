@@ -71,7 +71,7 @@ if __name__ == "__main__":
     dataset_name = args.dataset
     dataset_config = {
         'Synapse': {
-            'root_path': '/mnt/data3/segmentation dataset/Synapse/train_npz',
+            'root_path': '/path/to/Synapse/train_npz',
             'list_dir': './lists/lists_Synapse',
             'num_classes': 9,
         },
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     args.list_dir = dataset_config[dataset_name]['list_dir']
     args.is_pretrain = True
     args.exp = 'TU_' + dataset_name + str(args.img_size)
-    snapshot_path = "/mnt/data3/chai/segmentation_code/TransUNet-main/model/{}/{}".format(args.exp, 'TU')
+    snapshot_path = "./model/{}/{}".format(args.exp, 'TU')
     snapshot_path = snapshot_path + '_skip' + str(args.n_skip)
     snapshot_path = snapshot_path+'_'+str(args.max_iterations)[0:2]+'k' if args.max_iterations != 30000 else snapshot_path
     snapshot_path = snapshot_path + '_epo' +str(args.max_epochs) if args.max_epochs != 30 else snapshot_path
