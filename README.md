@@ -11,6 +11,15 @@ Our work has been accepted by EMBC 2023.
 Please follow [TransUnet](https://github.com/Beckschen/TransUNet).
 
 
+
+### Training
+please change root_path and run:
+
+```
+python train.py
+```
+
+
 # Pretrained Models
 
 - Pretrained Models are available at https://drive.google.com/file/d/1rR56r_vBirwh8xQ3GNH-umPW5jaS8_cJ/view?usp=drive_link.
