@@ -29,8 +29,6 @@ def get_config():
     return config
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--root_path', type=str,
-                    default='/mnt/data3/segmentation dataset/Synapse/train_npz', help='root dir for data')
 parser.add_argument('--dataset', type=str,
                     default='Synapse', help='experiment_name')
 parser.add_argument('--list_dir', type=str,
