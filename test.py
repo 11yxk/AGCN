@@ -35,8 +35,6 @@ def get_config():
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--volume_path', type=str,
-                    default='../data/Synapse/test_vol_h5', help='root dir for validation volume data')  # for acdc volume_path=root_dir
 parser.add_argument('--dataset', type=str,
                     default='Synapse', help='experiment_name')
 parser.add_argument('--num_classes', type=int,
@@ -104,7 +102,7 @@ if __name__ == "__main__":
     dataset_config = {
         'Synapse': {
             'Dataset': Synapse_dataset,
-            'volume_path': '/mnt/data3/segmentation dataset/Synapse/test_vol_h5',
+            'volume_path': '/path/to/Synapse/test_vol_h5',
             'list_dir': './lists/lists_Synapse',
             'num_classes': 9,
             'z_spacing': 1,
@@ -122,9 +120,9 @@ if __name__ == "__main__":
     config.n_classes = args.num_classes
     config.n_skip = args.n_skip
 
-    test_save_path='/mnt/data3/chai/segmentation_code/TransUNet-main/model/vit_checkpoint/test'
+    test_save_path='your_save_path'
     net = Model(config,  num_classes=config.n_classes).cuda()
-    snapshot = '/mnt/data3/chai/segmentation_code/TransUNet-main/model/TU_Synapse224/TU_skip3_epo150_bs24_lr0.1_224CTRGCN_mul_sub/epoch_137.pth'
+    snapshot = '/path/to/epoch_137.pth'
     net.load_state_dict(torch.load(snapshot))
     inference(args, net, test_save_path)
 
